@@ -15,7 +15,7 @@ newdata <- mutate(data, Date = as.Date(Date, '%d/%m/%Y'))
 filtered <- filter(newdata, Date == '2007-02-01' | Date == '2007-02-02')
 
 # open drawing device
-png(filename='plot4.png', width=480, height=480)
+png(filename='plot4.png', width=480, height=480, bg = "transparent")
 
 # set multiple plot, to 2 per row and 2 per column, fill column first
 par(mfcol=c(2,2))

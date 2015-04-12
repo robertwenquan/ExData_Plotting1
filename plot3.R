@@ -21,7 +21,7 @@ s2 <- selected$Sub_metering_2
 s3 <- selected$Sub_metering_3
 
 # open drawing device
-png(filename='plot3.png', width=480, height=480)
+png(filename='plot3.png', width=480, height=480, bg = "transparent")
 
 # plot the graph
 plot(type = 'l', x1, s1, col='black', xlab = '', ylab = 'Energy sub metering')

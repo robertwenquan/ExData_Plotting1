@@ -19,7 +19,7 @@ x1 <- strptime(selected$Date, "%Y-%m-%d %H:%M:%S")
 x2 <- selected$Global_active_power
 
 # open drawing device
-png(filename='plot2.png', width=480, height=480)
+png(filename='plot2.png', width=480, height=480, bg = "transparent")
 
 # plot the graph
 plot(type='l', x1, x2, xlab = '', ylab = 'Global Active Power (kilowatts)')
