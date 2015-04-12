@@ -34,13 +34,23 @@ s3 <- selected2$Sub_metering_3
 plot(type = 'l', x1, s1, col='black', xlab = '', ylab = 'Energy sub metering')
 lines(x1, s2, col='red')
 lines(x1, s3, col='blue')
-legend("topright", pch = '__', col = c('black', 'red', 'blue'), legend = c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'))
+legend("topright", pch = '__', col = c('black', 'red', 'blue'), box.lwd = 0, legend = c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'))
 
 # data for graph3
+selected3 <- mutate(filtered, Date = paste(as.character(Date), Time), Voltage=as.numeric(as.character(Voltage))) %>% select(Date, Voltage)
+x1 <- strptime(selected3$Date, "%Y-%m-%d %H:%M:%S")
+x2 <- selected3$Voltage
+
 # plot graph3
+plot(type='l', x1, x2, xlab = 'datetime', ylab = 'Voltage')
 
 # data for graph4
+selected4 <- mutate(filtered, Date = paste(as.character(Date), Time), Global_reactive_power=as.numeric(as.character(Global_reactive_power))) %>% select(Date, Global_reactive_power)
+x1 <- strptime(selected4$Date, "%Y-%m-%d %H:%M:%S")
+x2 <- selected4$Global_reactive_power
+
 # plot graph4
+plot(type='l', x1, x2, xlab = 'datetime', ylab = 'Global_reactive_power')
 
 # close the device
 dev.off()
