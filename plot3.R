@@ -1,4 +1,9 @@
 #!/usr/bin/R -f
+#
+# R script for Exploratory Data Analysis course project
+#
+# Robert Wen (robert.wen@nyu.edu)
+#
 
 library(dplyr)
 
